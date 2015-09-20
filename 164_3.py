@@ -5,8 +5,8 @@ import random
 pygame.init()
 
 red = (255, 0, 0)
-display_width = SCREEN_WIDTH =800
-display_height = SCREEN_HEIGHT =600
+display_width = SCREEN_WIDTH = SW=800
+display_height = SCREEN_HEIGHT = SH= 600
 
 gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('starwars')
@@ -16,7 +16,7 @@ clock = pygame.time.Clock()
 #make variable names more freindly so other can understand what it means
 
 display_image = pygame.image.load('deathstar.png')
-display_image = pygame.transform.scale(display_image, (display_width, display_height))
+display_image = pygame.transform.scale(display_image, (display_width, display_height),1,16)
 
 ship_image = pygame.image.load('Ship1.png')
 lImg = pygame.image.load('laser.png')
