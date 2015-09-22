@@ -99,26 +99,23 @@ class Laser(pygame.sprite.Sprite):
 
 class Game(object):
      
-     def main(self, screen):
-	     clock = pygame.time.Clock()
-	     pygame.display.set_caption("Starwars")
+  def main(self, screen):
+	clock = pygame.time.Clock()
+	pygame.display.set_caption("Starwars")
 	
-	     background_img = pygame.Surface(screen.get_size())
-	     background_img = pygame.image.load('deathstar.png').convert()
+	background_img = pygame.Surface(screen.get_size())
+	background_img = pygame.image.load('deathstar.png').convert()
 
-       global laserSprites, enemySprites, sprites
+        global laserSprites, enemySprites, sprites
+	laserSprites = pygame.sprite.RenderPlain(())
+	enemySprites = pygame.sprite.RenderPlain(())
+	enemySprites.add(Enemy(1))
+    sprites = pygame.sprite.Group()
+    player = Player(sprites)
 
-	     laserSprites = pygame.sprite.RenderPlain(())
-	     enemySprites = pygame.sprite.RenderPlain(())
-	     enemySprites.add(Enemy(1))
-        sprites = pygame.sprite.Group()
-        player = Player(sprites)
-        frame=0
-
-
-        while 1:
-          frame+=1
-          dt = clock.tick(30)
+    while 1:
+        frame+=1
+		dt = clock.tick(30)
 		counter = 0
 		screen.blit(background_img, (0, 0))
 
